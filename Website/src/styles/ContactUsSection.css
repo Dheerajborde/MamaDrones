@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Main Section */
+.contact-section {
+  @apply flex flex-col md:flex-row items-center justify-center w-full py-20 px-6 bg-gray-50;
+}
+
+/* Title */
+.contact-title {
+  @apply font-bold text-3xl md:text-4xl text-center md:text-left;
+}
+
+/* Highlight */
+.contact-highlight {
+  @apply text-pastelGreen font-extrabold text-6xl;
+}
+
+/* Info Grid */
+.contact-info {
+  @apply flex flex-col gap-8;
+}
+
+/* Info Item */
+.contact-info-item {
+  @apply flex flex-col md:flex-row items-center justify-center md:items-start md:justify-start gap-4;
+}
+
+/* Icon */
+.contact-icon {
+  @apply h-9 w-9 text-pastelGreen;
+}
+
+/* Info Title */
+.contact-info-title {
+  @apply font-medium text-lg;
+}
+
+/* Info Text */
+.contact-info-text {
+  @apply text-gray-600 text-center md:text-left;
+}
+
+/* Phone Number */
+.contact-phone {
+  @apply cursor-pointer text-gray-600 text-center md:text-left;
+}
+
+/* Increase the width and height of the form */
+.contact-form {
+  @apply w-[600px] h-[600px]; /* Set width and height */
+}
+@layer utilities {
+  .hide-logo {
+    display: none !important;
+  }
+}
