@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 
 const poppins_init = Poppins({
   subsets: ["latin"],
@@ -24,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="icon" href="/dbGreen.svg" />
-      </Head>
+      </head>
       <body className={poppins_init.className}>{children}</body>
     </html>
   );
