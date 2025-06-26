@@ -137,15 +137,6 @@ function Header({ language, setLanguage }: HeaderProps): JSX.Element {
             >
               {translations[language].callUs}
             </p>
-            <a
-              href="https://mamaapp.live"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-400 transition duration-300"
-            >
-              Mama A.I
-            </a>
-
             <button
               onClick={() => setShowMenu(false)}
               className="px-4 py-2 bg-white text-green-500 rounded-md hover:bg-gray-200 transition"
