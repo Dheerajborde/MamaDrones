@@ -87,49 +87,24 @@ function HeroSection({ language }: HeroSectionProps) {
 
         {/* Floating Buttons (Phone & Chat) */}
 
-        <div className="fixed bottom-12 right-4 sm:bottom-12 sm:right-4 md:bottom-16 md:right-8 lg:bottom-20 lg:right-10 xl:bottom-20 xl:right-12 flex flex-col items-center gap-3 z-50">
-          {/* Phone Button */}
+        {/* Phone Button - Mobile Only, Larger and Styled Consistently */}
+        <div className="fixed bottom-6 right-6 md:hidden flex flex-col items-center gap-3 z-50">
           <motion.button
             whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => (window.location.href = "tel:9322418319")}
             className="
-    fixed 
-    bottom-6 right-6                     
-    sm:bottom-4 sm:right-5
-    md:bottom-6 md:right-6
-    lg:bottom-8 lg:right-8
-    xl:bottom-10 xl:right-12
-
-    w-8 h-8           // base: mobile (smaller than before)
-    sm:w-9 sm:h-9     
-    md:w-10 md:h-10   
-    lg:w-12 lg:h-12   // large screens: increase size
-    xl:w-14 xl:h-14   // extra large screens
-
-    bg-blue-600 hover:bg-blue-700
-    text-white 
-    flex items-center justify-center 
-    rounded-full 
-    shadow-lg transition-all z-50
-  "
+      w-14 h-14 
+      bg-green-500 hover:bg-green-600
+      text-white 
+      flex items-center justify-center 
+      rounded-full 
+      shadow-lg transition-all duration-300 ease-in-out z-50
+    "
           >
-            <FaPhoneAlt className="
-    text-base       // base mobile size (smaller)
-    sm:text-lg
-    md:text-xl
-    lg:text-2xl
-    xl:text-3xl
-    flex-shrink-0 
-  " />
+            <FaPhoneAlt className="text-2xl" />
           </motion.button>
-
-
         </div>
-
-
-
-
 
       </motion.div>
     </section>
