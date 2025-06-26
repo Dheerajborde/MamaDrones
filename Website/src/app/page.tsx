@@ -13,9 +13,10 @@ import useMediaQuery from "@/utils/useMediaQuery"
 import DronebuddyCenters from "@/components/sections/DronebuddyCenters"
 import { LanguageProvider } from "../contexts/LanguageContext"
 import DroneStore from "@/components/sections/DroneStore"
-import ClientsPage from "@/components/sections/ClientsPage" 
+import ClientsPage from "@/components/sections/ClientsPage"
 import DroneServices from "@/components/sections/DroneServices"
 import StartupActivities from "@/components/sections/StartupActivities"
+import Head from "next/head"
 
 const translations = {
   en: {
@@ -55,8 +56,8 @@ export default function Home() {
     if (savedLang === "en" || savedLang === "mr") {
       setLanguage(savedLang)
     }
- 
- 
+
+
 
     // const script1 = document.createElement("script")
     // script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js"
@@ -80,7 +81,23 @@ export default function Home() {
 
   return (
     <LanguageProvider>
-      
+      <Head>
+        <title>MamaApp – Drone Services & Spare Parts</title>
+        <meta
+          name="description"
+          content="Mama Drones is your trusted platform for drone spare parts, service center locator and spraying services across Maharashtra. Order directly or via certified dealers."
+        />
+        <meta name="keywords" content="MamaApp, Drone Services, Spare Parts, Agriculture, DroneBuddy, Maharashtra,MamaDrones" />
+        <meta name="author" content="Mama Drones" />
+        <meta property="og:title" content="MamaApp – Drone Services & Spare Parts" />
+        <meta property="og:description" content="Locate MamaDrones centers, shop spare parts, and learn how drones help your farming with MamaApp." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.mamaapp.live/mama_drones.svg" />
+        <meta property="og:url" content="https://www.mamaapp.live" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+
       <main className="min-h-screen relative">
         <Header language={language} setLanguage={setLanguage} />
 
@@ -88,12 +105,12 @@ export default function Home() {
           <HeroSection language={language} />
         </section>
         <section>
-          <DroneStore language={language}/>
+          <DroneStore language={language} />
         </section>
         <section>
           <DroneServices language={language} />
         </section>
-       
+
         <section id="steps">
           <NewSteps language={language} />
         </section>

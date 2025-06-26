@@ -82,6 +82,16 @@ const droneCenters: DroneCenter[] = [
     phone: "9284085741",
     locationLink: "https://maps.app.goo.gl/h9vHkWLtoP54SdDd7",
   },
+  {
+  name: { en: "Pradip Jagtap", mr: "प्रदीप जगताप" },
+  district: { en: "Pune", mr: "पुणे" },
+  coordinates: [74.0265, 18.4866], 
+  address:
+    "Pune-Solapur Highway, Theur Phata, Maruti Nagar, Haveli Taluka, near Bank of Baroda, At-Post Kunjirwadi, Maharashtra 412201",
+  phone: "8625941220",
+  locationLink: "https://maps.app.goo.gl/jd76VFT4eMZzEBuL7",
+},
+
 ];
 
 const translations = {

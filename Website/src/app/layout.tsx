@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/dbGreen.svg" />
+        <link rel="icon" href="/mama_drones.svg" />
       </head>
       <body className={poppins_init.className}>{children}</body>
     </html>
