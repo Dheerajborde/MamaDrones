@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { FaPhoneAlt, FaCommentDots } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 interface HeroSectionProps {
   language: "en" | "mr";
@@ -29,85 +29,69 @@ function HeroSection({ language }: HeroSectionProps) {
 
   useEffect(() => {
     setIsVisible(true);
-
-    // ✅ Inject Chatbot Scripts Dynamically
-    const script1 = document.createElement("script");
-    // script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js";
-    // script1.async = true;
-    // document.body.appendChild(script1);
-
-    // const script2 = document.createElement("script");
-    // script2.src = "https://files.bpcontent.cloud/2025/03/16/16/20250316160453-PH0KMYB2.js";
-    // script2.async = true;
-    // document.body.appendChild(script2);
-
-    // return () => {
-    //   document.body.removeChild(script1);
-    //   document.body.removeChild(script2);
-    // };
   }, []);
 
   return (
-    <section className="relative w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-[100vh] lg:min-h-[110vh] flex items-center justify-center">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster="https://your-image-url.com/poster.jpg"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="https://res.cloudinary.com/disoamdue/video/upload/v1750755028/videoplayback_online-video-cutter.com_rediws.mp4"
-      />
+    <>
+      {/* Hero Section with Video Background */}
+      <section className="relative w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-[100vh] lg:min-h-[110vh] flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://res.cloudinary.com/disoamdue/video/upload/v1750755028/videoplayback_online-video-cutter.com_rediws.mp4"
+        />
 
-      {/* Text Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.35 }}
-        className="relative z-10 flex flex-col items-center justify-center text-center w-[90%] md:w-[70%] h-full"
-      >
-        {/* Title */}
-        <h1 className="font-bold text-white text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight">
-          {translations[language].title}
-        </h1>
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.35 }}
+          className="relative z-10 flex flex-col items-center justify-center text-center w-[90%] md:w-[70%] h-full px-4"
+        >
+          <h1 className="font-bold text-white text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] leading-tight">
+            {translations[language].title}
+          </h1>
 
-        {/* Subtitle */}
-        <h4 className="font-medium text-white text-[1rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.7rem] xl:text-[2rem] leading-relaxed mt-4">
-          {translations[language].subtitle}
-        </h4>
+          <h4 className="font-medium text-white text-[1rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.7rem] xl:text-[2rem] leading-relaxed mt-4">
+            {translations[language].subtitle}
+          </h4>
 
-        {/* Buy Now Button */}
-        <Link href="/drones" passHref>
-          <Button className="mt-8 bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110">
-            {translations[language].buttonText}
-          </Button>
-        </Link>
+          <Link href="/drones" passHref>
+            <Button className="mt-8 bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110">
+              {translations[language].buttonText}
+            </Button>
+          </Link>
+        </motion.div>
 
-        {/* Floating Buttons (Phone & Chat) */}
-
-        {/* Phone Button - Mobile Only, Larger and Styled Consistently */}
+        {/* Phone Button - Mobile Only */}
         <div className="fixed bottom-6 right-6 md:hidden flex flex-col items-center gap-3 z-50">
           <motion.button
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => (window.location.href = "tel:9322418319")}
-            className="
-      w-14 h-14 
-      bg-green-500 hover:bg-green-600
-      text-white 
-      flex items-center justify-center 
-      rounded-full 
-      shadow-lg transition-all duration-300 ease-in-out z-50
-    "
+            className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center rounded-full shadow-lg transition-all duration-300"
           >
             <FaPhoneAlt className="text-2xl" />
           </motion.button>
         </div>
+      </section>
 
-      </motion.div>
-    </section>
+      {/* New PNG Image - Placed JUST BELOW the video section */}
+      <div className="bg-white py-8 md:py-12 flex justify-center">
+        <div className="max-w-5xl w-full px-4">
+          <img
+            src="/Mama_app_soon.png"        // ← Make sure this name is correct
+            alt="Mama Drones Spraying in Action"
+            className="w-full rounded-2xl shadow-xl border border-gray-200"
+          />
+        </div>
+      </div>
+    </>
   );
 }
 
