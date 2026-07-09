@@ -13,7 +13,7 @@ import useMediaQuery from "@/utils/useMediaQuery"
 import DronebuddyCenters from "@/components/sections/DronebuddyCenters"
 import { LanguageProvider } from "../contexts/LanguageContext"
 import DroneStore from "@/components/sections/DroneStore"
-import ClientsPage from "@/components/sections/ClientsPage"
+
 import DroneServices from "@/components/sections/DroneServices"
 import StartupActivities from "@/components/sections/StartupActivities"
 import Head from "next/head"
@@ -130,7 +130,7 @@ export default function Home() {
           <ContactUsSection language={language} />
         </section>
         <section>
-          <ClientsPage language={language} />
+          
         </section>
         <Footer language={language} />
       </main>

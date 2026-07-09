@@ -45,7 +45,7 @@ function Footer({ language }: FooterProps): JSX.Element {
       socialMedia: "Social Media",
       office: "Office",
       address:
-        "Mama Drone, Navbharat Society, Plot No. 5, Gurunagar Housing Society, Navbharat Housing Society, N-8, CIDCO, Chhatrapati Sambhajinagar, Maharashtra 431003 Ph: 9834512803",
+        "Mama Drone,STPI, T-17, Opp. Garware Stadium, MIDC, Chikalthana, Chhatrapati Sambhajinagar, Maharashtra 431008 Ph: 9834512803",
       about:
         "Mama Drones is a leading provider of drone-based agricultural solutions, offering high-quality spare parts and expert maintenance across Maharashtra. Whether you're a farmer, dealer, or agritech enthusiast, Mama Drones empowers you with cutting-edge drone technology to increase efficiency, reduce labor costs, and maximize crop yields. Our trusted network of Mama Drones Centers ensures reliable service and support, while our digital platform makes it easy to locate service centers and order spare parts. Join the drone revolution with Mama Drones — where agriculture meets innovation.",
     },
@@ -54,7 +54,7 @@ function Footer({ language }: FooterProps): JSX.Element {
       socialMedia: "सोशल मीडिया",
       office: "कार्यालय",
       address:
-        "मामा ड्रोन, नवभारत सोसायटी, प्लॉट क्रमांक ५, गुरुनगर हाऊसिंग सोसायटी, नवभारत हाऊसिंग सोसायटी, एन ८, सिडको, छत्रपती संभाजीनगर, महाराष्ट्र ४३१००३ भा.क्र.: ९८३४५१२८०३",
+        "मामा ड्रोन, एस टी पी आय, टी-१७, चिकलठाणा एम.आय.डी.सी., छत्रपती संभाजीनगर, महाराष्ट्र 431008 भा.क्र.: 9834512803",
       about:
         "मामा ड्रोन हे कृषी क्षेत्रासाठी ड्रोन-आधारित उपाययोजनांचे आघाडीचे प्रदाता आहेत, जे महाराष्ट्रभर उच्च-गुणवत्तेचे स्पेअर पार्ट्स आणि तज्ज्ञ सेवा सुविधा देतात. तुम्ही शेतकरी असाल, डीलर असाल किंवा एग्रिटेक क्षेत्रातील उत्साही व्यक्ती असाल, मामा ड्रोन तुम्हाला अत्याधुनिक ड्रोन तंत्रज्ञानाद्वारे कार्यक्षमतेत वाढ, श्रम खर्चात बचत आणि पीक उत्पादनात वाढ मिळवून देतो. आमचे विश्वासार्ह मामा ड्रोन सेंटर्सचे जाळे दर्जेदार सेवा आणि सहाय्य पुरवते, तर आमचे डिजिटल प्लॅटफॉर्म तुम्हाला सेवा केंद्रे शोधण्यास आणि स्पेअर पार्ट्स सहज मागवण्यास मदत करते. मामा ड्रोनसोबत ड्रोन क्रांतीचा भाग व्हा — जिथे शेती आणि नवोपक्रम यांचा संगम होतो.",
     },
