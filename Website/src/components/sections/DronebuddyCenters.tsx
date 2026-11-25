@@ -161,7 +161,7 @@ const DronebuddyCenters: React.FC<DronebuddyCentersProps> = ({ language }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string>("");
-  const [selectedAddress, setSelectedAddress] = useState<string>("");
+  const selectedCenter = selectedLocation === "" ? null : droneCenters[Number(selectedLocation)];
 
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -190,7 +190,7 @@ const DronebuddyCenters: React.FC<DronebuddyCentersProps> = ({ language }) => {
             <p><strong>${translations[language].district}:</strong> ${center.district[language]}</p>
             <p><strong>${translations[language].address}:</strong> ${center.address}</p>
             <p><strong>${translations[language].phone}:</strong> 
-              <a href="tel:${center.phone}" style="color: #007bff; text-decoration: none;">${center.phone}</a>
+              <a href="tel:${center.phone.split(" / ")[0]}" style="color: #007bff; text-decoration: none;">${center.phone}</a>
             </p>
             ${
               center.locationLink
@@ -213,13 +213,12 @@ const DronebuddyCenters: React.FC<DronebuddyCentersProps> = ({ language }) => {
   }, [mapboxToken, language]);
 
   const handleLocationChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const locationName = event.target.value;
-    setSelectedLocation(locationName);
-    const location = droneCenters.find((center) => center.district[language] === locationName);
+    const locationIndex = event.target.value;
+    setSelectedLocation(locationIndex);
+    const location = locationIndex === "" ? null : droneCenters[Number(locationIndex)];
     if (location && map) {
       const [lng, lat] = location.coordinates;
       map.flyTo({ center: [lng, lat], zoom: 12, essential: true });
-      setSelectedAddress(`${location.name[language]} - ${location.address} - ${location.phone}`);
     }
   };
 
@@ -236,14 +235,15 @@ const DronebuddyCenters: React.FC<DronebuddyCentersProps> = ({ language }) => {
         >
           <option value="">{translations[language].selectLocation}...</option>
           {droneCenters.map((center, index) => (
-            <option key={index} value={center.district[language]}>
-              {center.district[language]}
+            <option key={index} value={index}>
+              {center.district[language]} — {center.name[language]}
             </option>
           ))}
         </select>
+        {selectedCenter && <div className="w-full max-w-md bg-white p-5 text-left"><strong>{selectedCenter.name[language]}</strong><p>{selectedCenter.address}</p><a className="underline" href={`tel:${selectedCenter.phone.split(" / ")[0]}`}>{selectedCenter.phone}</a>{selectedCenter.locationLink && <p><a className="underline" href={selectedCenter.locationLink} target="_blank" rel="noopener noreferrer">{translations[language].seeOnMap}</a></p>}</div>}
       </div>
       <div className="w-full md:w-1/2 relative p-4">
-        <div ref={mapContainer} className="w-full h-[500px] rounded-lg shadow-lg"></div>
+        {mapboxToken ? <div ref={mapContainer} className="w-full h-[500px] rounded-lg shadow-lg"></div> : <div className="w-full min-h-[260px] bg-white p-6 flex items-center"><p>{language === "mr" ? "नकाशा उपलब्ध नाही. केंद्र निवडा आणि पत्ता किंवा फोन वापरा." : "Map unavailable. Select a center to see its address and phone number."}</p></div>}
       </div>
     </div>
   );

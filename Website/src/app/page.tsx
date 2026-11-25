@@ -1,139 +1,32 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import Footer from "@/components/Footer"
-import Header from "@/components/Header"
-import FAQSection from "@/components/sections/FAQSection"
-import HeroSection from "@/components/sections/HeroSection"
-import ContactUsSection from "@/components/sections/ContactUsSection"
-
-import NewSteps from "@/components/sections/Steps"
-import Advantages from "@/components/sections/Advantages"
-import useMediaQuery from "@/utils/useMediaQuery"
-import DronebuddyCenters from "@/components/sections/DronebuddyCenters"
-import { LanguageProvider } from "../contexts/LanguageContext"
-import DroneStore from "@/components/sections/DroneStore"
-
-import DroneServices from "@/components/sections/DroneServices"
-import StartupActivities from "@/components/sections/StartupActivities"
-import Head from "next/head"
-
-const translations = {
-  en: {
-    hero: "Welcome to Our Website",
-    droneStore: "Our Drone Collection",
-    whyDB: "Why Choose Us?",
-    steps: "Steps to Follow",
-    advantages: "Our Advantages",
-    dronebuddyCenters: "Dronebuddy Centers",
-    gallery: "Gallery",
-    faq: "Frequently Asked Questions",
-    contact: "Contact Us",
-    switchLanguage: "\u092E\u0930\u093E\u0920\u0940",
-  },
-  mr: {
-    hero: "\u0906\u092E\u091A\u094D\u092F\u093E \u0935\u0947\u092C\u0938\u093E\u0907\u091F\u0935\u0930 \u0906\u092A\u0932\u0947 \u0938\u094D\u0935\u093E\u0917\u0924 \u0906\u0939\u0947",
-    droneStore: "\u0906\u092E\u091A\u0947 \u0921\u094D\u0930\u094B\u0928 \u0938\u0902\u0917\u094D\u0930\u0939",
-    whyDB: "\u0906\u092E\u0939\u093E\u0932\u093E \u0915\u093E \u0928\u093F\u0935\u0921\u093E\u0935\u0947?",
-    steps: "\u0905\u0928\u0941\u0938\u0930\u0923 \u0915\u0930\u0923\u094D\u092F\u093E\u091A\u0947 \u091F\u092A\u094D\u092A\u0947",
-    advantages: "\u0906\u092E\u091A\u0947 \u092B\u093E\u092F\u0926\u0947",
-    dronebuddyCenters: "\u0921\u094D\u0930\u094B\u0928\u092C\u0921\u0940 \u0915\u0947\u0902\u0926\u094D\u0930\u0947",
-    gallery: "\u0917\u0945\u0932\u0930\u0940",
-    faq: "\u0928\u0947\u0939\u092E\u0940 \u0935\u093F\u091A\u093E\u0930\u0932\u0947 \u091C\u093E\u0923\u093E\u0930\u0940 \u092A\u094D\u0930\u0936\u094D\u0928",
-    contact: "\u0938\u0902\u092A\u0930\u094D\u0915 \u0915\u0930\u093E",
-    switchLanguage: "English",
-  },
-}
+import Link from "next/link";
+import EditorialImage from "@/components/EditorialImage";
+import CountUpValue from "@/components/CountUpValue";
+import { assets, drones } from "@/lib/site-data";
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false)
-  const [language, setLanguage] = useState<"en" | "mr">("mr")
-  const md = useMediaQuery("(min-width: 800px)")
+  return <main>
+    <section className="hero shell" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <p className="eyebrow">Mama / Agricultural robotics</p>
+        <h1 id="hero-title">From the sky<br /><em>to the soil.</em></h1>
+        <div className="hero-lower"><div><h2>Drone work built the network.<br />Pehelwan is the next machine.</h2><p>Mama began with drone spraying and built a service business around it. Pehelwan brings that experience to ground machinery.</p><div className="button-row"><Link className="button button-dark" href="/drones">Explore drones</Link><Link className="text-link" href="/electric-tractor">Meet the upcoming tractor <span aria-hidden="true">↗</span></Link></div></div><div className="hero-index"><span>01 / 05</span><span>Built around the field</span></div></div>
+      </div>
+      <div className="hero-media"><EditorialImage src={assets.heroFlight} alt="Agricultural drone flying above fields at sunset" priority /><span className="image-caption">Agricultural drone / Field flight</span></div>
+      <div className="status-rail"><span><i /> Drones <strong>Current business</strong></span><span><i /> Electric tractor <strong>Pehelwan</strong></span></div>
+    </section>
 
-  useEffect(() => {
-    setIsClient(true)
-    const savedLang = localStorage.getItem("language")
-    if (savedLang === "en" || savedLang === "mr") {
-      setLanguage(savedLang)
-    }
+    <section className="section work-section" id="work"><div className="shell work-grid"><div className="section-intro"><p className="eyebrow">01 / What we do today</p><h2>Drones you can<br />put to work.</h2><p>Spraying was the first service. Equipment sales, training and repairs followed as customers needed help beyond the flight.</p><Link className="text-link" href="/drones">Explore our drones <span aria-hidden="true">↗</span></Link></div><div className="work-photo"><EditorialImage src={assets.fieldVisit} alt="People gathered around a Mama agricultural drone at an outdoor event" /><span className="image-caption">Drone equipment / Community outreach</span></div><div className="work-services"><span>01 &nbsp; Drone sales and kits</span><span>02 &nbsp; Spraying services</span><span>03 &nbsp; Training and support</span><span>04 &nbsp; Repair and maintenance</span></div></div></section>
 
+    <section className="section field-section"><div className="shell"><div className="field-heading"><p className="eyebrow">02 / Company figures</p><h2>The reach behind<br /><em>the work.</em></h2><p>Company-reported figures from November 2026. Direct service and reach through customer-operated drones are separate measures.</p></div><div className="insight-grid"><div className="insight-photo"><EditorialImage src={assets.communitySession} alt="A group gathered outdoors for a conversation about agricultural work" /><span className="image-caption">Listening to the community</span></div><div className="insights"><article><CountUpValue figure="buyers" /><div><h3>Drone buyers</h3><p>Farmers who purchased a Mama drone.</p></div></article><article><CountUpValue figure="served" /><div><h3>Directly served</h3><p>Farmers served by Mama’s own spraying team.</p></div></article><article><CountUpValue figure="reached" /><div><h3>Reached through customers</h3><p>Estimated farmers reached by drones operated by Mama customers.</p></div></article><article><CountUpValue figure="network" /><div><h3>Shops and dealers</h3><p>Company-run locations and dealer partners across Maharashtra and Gujarat.</p></div></article></div></div></div></section>
 
+    <section className="tractor-section" id="tractor"><div className="shell tractor-content"><div className="tractor-top"><p className="eyebrow">03 / Ground systems</p></div><h2>Pehelwan moves<br /><em>onto the ground.</em></h2><p>Pehelwan is Mama’s compact electric ground vehicle. Its current design is shaped by the space and work between crop rows.</p><div className="tractor-descriptors"><span>Compact.</span><span>Electric.</span><span>Autonomous.</span></div><figure className="prototype-visual"><EditorialImage src="/pehelwan-outdoor-wide.webp" alt="Pehelwan electric ground vehicle beneath trees" contain /><figcaption className="image-caption">Pehelwan / Production design may change</figcaption></figure><div className="tractor-bottom"><p>Final specifications, certification and commercial availability have not been confirmed.</p><Link className="button button-signal" href="/electric-tractor">Explore Pehelwan</Link></div></div></section>
 
-    // const script1 = document.createElement("script")
-    // script1.src = "https://cdn.botpress.cloud/webchat/v2.2/inject.js"
-    // script1.async = true
-    // document.body.appendChild(script1)
+    <section className="section journey-section"><div className="shell"><div className="journey-heading"><p className="eyebrow">04 / Our journey</p><h2>How the work<br /><em>changed direction.</em></h2><Link className="text-link" href="/our-journey">Explore our journey <span aria-hidden="true">↗</span></Link></div><div className="journey-layout"><div className="journey-image"><EditorialImage src={assets.founderSession} alt="Mama founder Dheeraj Borde speaking at a drone session" /></div><div className="journey-chapters"><article><span>01 / Origin</span><h3>Farming roots.</h3><p>Founder Dheeraj Borde grew up in a farming family and chose problems he knew firsthand.</p></article><article><span>02 / Taking flight</span><h3>Spraying first.</h3><p>A service business brought the team into regular contact with growers and operators.</p></article><article><span>03 / Beyond the skies</span><h3>Ground machinery next.</h3><p>Pehelwan carries that operating experience into a compact electric machine.</p></article></div></div></div></section>
 
-    // const script2 = document.createElement("script")
-    // script2.src = "https://files.bpcontent.cloud/2025/03/16/16/20250316160453-PH0KMYB2.js"
-    // script2.async = true
-    // document.body.appendChild(script2)
+    <section className="section people-section"><div className="shell people-grid"><div><p className="eyebrow">05 / People behind Mama</p><h2>Operators and engineers<br />working together.</h2><p>Dheeraj Borde leads the company. The team also brings together EV powertrain, software, design and field operations experience.</p></div><EditorialImage src={assets.training} alt="People gathered for an agricultural drone demonstration" /></div></section>
 
-    // return () => {
-    //   document.body.removeChild(script1)
-    //   document.body.removeChild(script2)
-    // }
-  }, [])
+    <section className="section product-preview"><div className="shell"><div className="product-heading"><div><p className="eyebrow">Drone catalogue</p><h2>Machines in the field.</h2></div><Link className="text-link" href="/drones">View all drones <span aria-hidden="true">↗</span></Link></div><div className="preview-grid">{drones.slice(0, 3).map((drone, index) => <Link className="preview-product" key={drone.slug} href={`/drones/${drone.slug}`}><span className="product-number">0{index + 1} / Agricultural drone</span><EditorialImage src={drone.image} alt={drone.imageAlt} contain /><h3>{drone.name}</h3><p>{drone.variant}</p><span className="text-link">View product <span aria-hidden="true">↗</span></span></Link>)}</div></div></section>
 
-  if (!isClient) {
-    return null
-  }
-
-  return (
-    <LanguageProvider>
-      <Head>
-        <title>MamaApp – Drone Services & Spare Parts</title>
-        <meta
-          name="description"
-          content="Mama Drones is your trusted platform for drone spare parts, service center locator and spraying services across Maharashtra. Order directly or via certified dealers."
-        />
-        <meta name="keywords" content="MamaApp, Drone Services, Spare Parts, Agriculture, DroneBuddy, Maharashtra,MamaDrones" />
-        <meta name="author" content="Mama Drones" />
-        <meta property="og:title" content="MamaApp – Drone Services & Spare Parts" />
-        <meta property="og:description" content="Locate MamaDrones centers, shop spare parts, and learn how drones help your farming with MamaApp." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.mamaapp.live/mama_drones.svg" />
-        <meta property="og:url" content="https://www.mamaapp.live" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-
-
-      <main className="min-h-screen relative">
-        <Header language={language} setLanguage={setLanguage} />
-
-        <section id="hero">
-          <HeroSection language={language} />
-        </section>
-        <section>
-          <DroneStore language={language} />
-        </section>
-        <section>
-          <DroneServices language={language} />
-        </section>
-
-        <section id="steps">
-          <NewSteps language={language} />
-        </section>
-        <section id="advantages">
-          <Advantages language={language} />
-        </section>
-        <section>
-          <StartupActivities language={language} />
-        </section>
-        <section id="dronebuddy-centers">
-          <DronebuddyCenters language={language} />
-        </section>
-        <section id="faq">
-          <FAQSection language={language} />
-        </section>
-        <section id="contact">
-          <ContactUsSection language={language} />
-        </section>
-        <section>
-          
-        </section>
-        <Footer language={language} />
-      </main>
-    </LanguageProvider>
-  )
+    <section className="closing-section"><div className="shell"><p className="eyebrow">The next chapter</p><h2>Where can we<br /><em>help you next?</em></h2><p>Browse the drone range, see Pehelwan’s current design, or tell us what you need.</p><div className="button-row"><Link className="button button-signal" href="/drones">Explore drones</Link><Link className="button button-outline-light" href="/electric-tractor">Explore Pehelwan</Link><Link className="text-link light-link" href="/contact">Work with us <span aria-hidden="true">↗</span></Link></div></div></section>
+  </main>;
 }

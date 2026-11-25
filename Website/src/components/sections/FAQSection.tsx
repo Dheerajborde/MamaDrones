@@ -20,7 +20,7 @@ const translations = {
     q5: "Do you stock spare parts for agricultural drones?",
     a5: "Yes, we manage spare parts inventory for quick replacements.",
     q6: "How fast can you repair drones?",
-    a6: "We aim to complete repairs within 2 days.",
+    a6: "Repair time depends on the issue and parts available. Please contact the team for an estimate.",
   },
   mr: {
     title: "नेहमी विचारले जाणारे प्रश्न",
@@ -35,7 +35,7 @@ const translations = {
     q5: "आपण कृषी ड्रोनसाठी स्पेअर पार्ट्स साठवता का?",
     a5: "होय, आम्ही स्पेअर पार्ट्स इन्व्हेंटरीचे व्यवस्थापन करतो जेणेकरून जलद बदल करू शकता.",
     q6: "आपण ड्रोन किती वेगाने दुरुस्त करू शकता?",
-    a6: "आम्ही दुरुस्तीसाठी २ दिवसांच्या आत सेवा पूर्ण करण्याचा प्रयत्न करतो.",
+    a6: "दुरुस्तीचा वेळ समस्या आणि उपलब्ध सुट्या भागांवर अवलंबून असतो. कृपया अंदाजासाठी संपर्क साधा.",
   },
 };
 

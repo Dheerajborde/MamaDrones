@@ -13,8 +13,8 @@ const services = [
   {
     title: { en: "Drone Sales", mr: "ड्रोन विक्री" },
     description: {
-      en: "Flexible drone rental options for various agricultural and industrial applications.",
-      mr: "विविध कृषी आणि औद्योगिक अनुप्रयोगांसाठी लवचिक ड्रोन भाड्याने पर्याय.",
+      en: "Agricultural drones and kits; contact Mama for current availability.",
+      mr: "कृषी ड्रोन आणि किट; सध्याच्या उपलब्धतेसाठी मामाशी संपर्क साधा.",
     },
     image: "https://res.cloudinary.com/dfly9upu9/image/upload/v1741194092/IMG_6348_yhkqua.jpg",
   },
@@ -75,9 +75,9 @@ export default function DroneServices({ language }: DroneServicesProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="container mx-auto">
-        <h1 className="text-center font-bold text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem]  text-green-800 mb-12">
+        <h2 className="text-center font-bold text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem]  text-green-800 mb-12">
           {language === "en" ? "Our Services" : "आमच्या सेवा"}
-        </h1>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} language={language} />

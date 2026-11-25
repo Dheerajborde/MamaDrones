@@ -1,32 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import SiteChrome from "@/components/SiteChrome";
 import "./globals.css";
 
-const poppins_init = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "600", "700", "500"],
-  variable: "--font-roboto",
-});
-
 export const metadata: Metadata = {
-  title: "Mama Drones",
-  description: "Mama Drones",
-  icons: {
-    icon: "/mama_drones.svg",
-  },
+  metadataBase: new URL("https://www.mamaapp.live"),
+  title: { default: "MAMA Agricultural Robotics | Shanik AG Private Limited", template: "%s | MAMA Agricultural Robotics" },
+  description: "Agricultural drones today. Meet Pehelwan, Mama's electric ground vehicle, and explore the work shaping what comes next.",
+  openGraph: { title: "MAMA Agricultural Robotics by Shanik AG Private Limited", description: "Agricultural drones today. Autonomous electric tractors next.", siteName: "MAMA Agricultural Robotics by Shanik AG Private Limited", type: "website", images: ["/MamaDronesLogo.png"] },
+  icons: { icon: "/mama_drones.svg" },
+  alternates: { canonical: "/" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/mama_drones.svg" />
-      </head>
-      <body className={poppins_init.className}>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body><a className="skip-link" href="#main-content">Skip to content</a><SiteChrome>{children}</SiteChrome></body></html>;
 }

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
+import Image from "next/image";
 
 interface HeroSectionProps {
   language: "en" | "mr";
@@ -11,15 +12,15 @@ interface HeroSectionProps {
 
 const translations = {
   en: {
-    title: "India's First Drone Service Company.",
+    title: "Agricultural drone products and services.",
     subtitle:
-      "India's fastest drone network, we deploy agricultural drones in rural areas, provide excellent drone education, repair services, and multilingual customer support, all with speed and superior quality.",
+      "Mama works with agricultural drones in the field and offers equipment, training, repair and customer support.",
     buttonText: "Buy Agricultural Drone",
   },
   mr: {
-    title: "भारतातील पहिली ड्रोन सेवा कंपनी.",
+    title: "कृषी ड्रोन उत्पादने आणि सेवा.",
     subtitle:
-      "भारतातील सर्वात वेगवान ड्रोन नेटवर्क, आम्ही ग्रामीण भागात कृषी ड्रोन तैनात करतो, उत्कृष्ट ड्रोन शिक्षण, दुरुस्ती सेवा आणि बहुभाषिक ग्राहक समर्थन प्रदान करतो, तेही वेगाने आणि उत्कृष्ट गुणवत्तेसह.",
+      "मामा कृषी ड्रोन, प्रशिक्षण, दुरुस्ती आणि ग्राहक सहाय्य यावर काम करते.",
     buttonText: "कृषी ड्रोन खरेदी करा",
   },
 };
@@ -35,16 +36,8 @@ function HeroSection({ language }: HeroSectionProps) {
     <>
       {/* Hero Section with Video Background */}
       <section className="relative w-full min-h-[80vh] sm:min-h-[90vh] md:min-h-[100vh] lg:min-h-[110vh] flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://res.cloudinary.com/disoamdue/video/upload/v1750755028/videoplayback_online-video-cutter.com_rediws.mp4"
-        />
+        <Image src="https://res.cloudinary.com/disoamdue/image/upload/v1750657615/DroneSpraying_chdqrp.jpg" alt="Agricultural drone spraying a field" fill sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
 
         {/* Text Content */}
         <motion.div

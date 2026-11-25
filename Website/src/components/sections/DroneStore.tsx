@@ -8,7 +8,7 @@ import Link from "next/link"
 
 const drones = [
   {
-    name: "DGCA Certified 10L Drone(Without Sensors)",
+    name: "10L Drone (Without Sensors)",
     flightTime: "22 minutes",
     payload: "10 litres",
     weight: "24.5 kg",
@@ -18,7 +18,7 @@ const drones = [
     image: "https://res.cloudinary.com/dfly9upu9/image/upload/v1740153316/Pi7_Tool_drone-on-field_pcgtzg.jpg",
   },
   {
-    name: "DGCA Certified 10L Drone(With Sensors)",
+    name: "10L Drone (With Sensors)",
     flightTime: "20 minutes",
     payload: "10 litres",
     weight: "29 kg",
@@ -119,6 +119,7 @@ const DroneStore = ({ language }: { language: string }) => {
         <h2 className="font-bold text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center mb-6 text-green-700 py-6 md:py-12">
           {language === "en" ? "Our Drone Collection" : "आमचा ड्रोन संग्रह"}
         </h2>
+        <p className="text-center mb-8 text-base">{language === "en" ? "Previous catalogue figures and prices: confirm current specifications, certification and availability with Mama." : "मागील कॅटलॉगमधील किंमती व तपशील: सध्याची माहिती मामाकडून तपासा."}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {drones.map((drone, index) => (
             <DroneCard key={index} drone={drone} language={language} onPurchase={handlePurchase} index={index} />
