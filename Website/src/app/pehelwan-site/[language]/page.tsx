@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import EnglishTractor from "@/components/tractor/EnglishTractor";
-import MarathiTractor from "@/components/tractor/MarathiTractor";
+import PehelwanSite from "@/components/tractor/PehelwanSite";
 
 type Props = { params: Promise<{ language: string }> };
 
@@ -19,6 +18,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PehelwanPage({ params }: Props) {
-  const Tractor = (await params).language === "mr" ? MarathiTractor : EnglishTractor;
-  return <Tractor mamaOrigin="https://www.mamaapp.live" />;
+  return <PehelwanSite language={(await params).language as "en" | "mr"} />;
 }

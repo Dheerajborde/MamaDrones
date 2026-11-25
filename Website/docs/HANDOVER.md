@@ -1,5 +1,11 @@
 # Website handover
 
+## 2026-11-25 — distinct Pehelwan website
+
+The owner clarified that `pehelwan.live` should be a different website, then supplied About content about vision AI, GPS guided sowing, targeted micro spraying, multi speed gearbox, Quadra steer, custom three point linkage, remote or steering control, mostly Indian technology and a custom battery pack in progress. The Pehelwan hostname now has its own charcoal and copper page, navigation, bilingual content, photos, road test, figures and interest links. The MAMA tractor routes keep their existing components. Proposed capabilities are described as work or plans because public operating validation has not been provided. The claimed Indian first for Quadra steer has not been independently verified and is omitted pending substantiation.
+
+`npm.cmd run lint`, `npm.cmd run build`, and `git diff --check` passed. The production build generated 24 pages. A loopback HTTP check from a separate execution session was blocked by local connection restrictions, so the new design has not received a fresh browser inspection. The previously verified domain routing commit is `ecf82f1`. The registrar DNS still points to Namecheap parking. After publishing, verify both language URLs, media, enquiry links, mobile layout, the MAMA homepage and HTTPS. Restore the earlier Vercel deployment or revert this feature if a production issue appears.
+
 ## 2026-11-25 — Pehelwan domain
 
 The owner requested the electric tractor page at `pehelwan.live`. The domain uses the existing tractor pages in both languages. `/` and `/marathi` have product navigation, their own canonical URLs, and links to the corresponding tractor enquiry on `www.mamaapp.live`. The Next.js routing rules match the hostname so that MAMA retains its homepage. The change adds no package, form provider, database, or credential. Product copy and media come from the same components on both sites.
