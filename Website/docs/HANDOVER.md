@@ -1,5 +1,13 @@
 # Website handover
 
+## 2026-11-25 — Pehelwan domain
+
+The owner requested the electric tractor page at `pehelwan.live`. The domain uses the existing tractor pages in both languages. `/` and `/marathi` have product navigation, their own canonical URLs, and links to the corresponding tractor enquiry on `www.mamaapp.live`. The Next.js routing rules match the hostname so that MAMA retains its homepage. The change adds no package, form provider, database, or credential. Product copy and media come from the same components on both sites.
+
+The production build generated 24 pages. Local HTTP checks with explicit Host headers covered both languages, product and MAMA navigation, redirects, canonicals, sitemaps, robots, CSS and tractor media. These checks cover application routing. Public DNS and HTTPS require a separate check from outside the deployment.
+
+Vercel accepted the apex domain on the `mama-drones-871b` production project. Its domain settings specified an A record at `@` pointing to `216.198.79.1`. At inspection the registrar forwarded the apex (`192.64.119.136`) to `www`, which served a parking page. Only the apex record is needed for the requested address. The DNS account is managed separately from Vercel. Verify both language URLs and the MAMA homepage after cutover. The previous verified MAMA deployment is `42fddec`. To recover, revert this feature on Git or restore that deployment and restore the prior web forwarding at the registrar if needed. Leave nameservers and mail records intact.
+
 ## 2026-11-25 — production remediation
 
 **Done:** The review branch was based on `main` at `7fc9d9d` and the redesign commit `e8c17c3`. Upgraded Next.js to 16.4.6 and React to 19.3.1, removed unused packages, migrated lint to ESLint 9 flat config, and kept Webpack as the build engine after Turbopack failed in the local Mapbox CSS pipeline. English and Marathi have separate root layouts so server HTML has the correct `lang`; the sitemap lists all 18 public URLs and 36 alternate links. Fixed narrow screen header and hero clipping. Compressed the tractor video to 978 KB WebM with a 917 KB MP4 fallback. Added a notice that the contact form sends entries through Formfacade and Google Forms. The owner approved public use of the November 2026 company figures, Pehelwan statements, Marathi copy, and supplied media. One labeled test enquiry was submitted and the owner confirmed receipt.
