@@ -25,6 +25,7 @@ export default function TractorVideo() {
 
   return <video ref={videoRef} className="tractor-video" muted playsInline loop preload="none" poster="/pehelwan-road-run-poster.webp" aria-label="Pehelwan electric ground vehicle moving on a road at half speed">
     <source src="/pehelwan-road-run.webm" type="video/webm" />
+    <source src="/pehelwan-road-run.mp4" type="video/mp4" />
     Your browser does not support this video.
   </video>;
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import EditorialImage from "@/components/EditorialImage";
 import { assets } from "@/lib/site-data";
-import "../../our-journey/journey.css";
+import "../../../journey.css";
 
 export const metadata: Metadata = { title: "आमचा प्रवास", description: "ड्रोन फवारणीपासून Pehelwan पर्यंत मामाचा प्रवास मराठीत.", alternates: { canonical: "/marathi/our-journey" } };
 

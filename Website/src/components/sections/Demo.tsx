@@ -25,7 +25,7 @@ const data = [
   },
 ];
 
-function Images({ text, url }: any) {
+function Images({ text, url }: { text: string; url: string }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useTransform(scrollYProgress, [0, 1], [-300, 350]);

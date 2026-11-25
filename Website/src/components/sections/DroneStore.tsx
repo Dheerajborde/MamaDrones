@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card"
 import { useState } from "react"
-import Link from "next/link"
 
 const drones = [
   {
@@ -53,12 +52,10 @@ const DroneCard = ({
   drone,
   language,
   onPurchase,
-  index,
 }: {
   drone: (typeof drones)[0]
   language: string
   onPurchase: () => void
-  index: number
 }) => {
   return (
     <Card className="w-full max-w-sm border-2 border-green-500 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl">
@@ -122,7 +119,7 @@ const DroneStore = ({ language }: { language: string }) => {
         <p className="text-center mb-8 text-base">{language === "en" ? "Previous catalogue figures and prices: confirm current specifications, certification and availability with Mama." : "मागील कॅटलॉगमधील किंमती व तपशील: सध्याची माहिती मामाकडून तपासा."}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {drones.map((drone, index) => (
-            <DroneCard key={index} drone={drone} language={language} onPurchase={handlePurchase} index={index} />
+            <DroneCard key={index} drone={drone} language={language} onPurchase={handlePurchase} />
           ))}
         </div>
       </div>

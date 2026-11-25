@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import { FaSprayCan, FaTools, FaShoppingCart } from "react-icons/fa"
 
 interface NewStepsProps {
@@ -65,9 +66,11 @@ function NewSteps({ language }: NewStepsProps) {
 
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2 relative">
-            <img
+            <Image
               src="https://res.cloudinary.com/disoamdue/image/upload/v1750500684/eft_drone_white-removebg-preview_e8bqpa.png"
               alt="Drone"
+              width={800}
+              height={600}
               className="w-4/5 h-auto rounded-lg transform hover:scale-105 transition duration-300 mx-auto"
             />
           </div>

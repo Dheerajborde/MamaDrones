@@ -1,5 +1,4 @@
 "use client";
-import { Mail, Navigation, Phone } from "lucide-react";
 import "../../styles/ContactUsSection.css";
 import FormfacadeEmbed from "@formfacade/embed-react";
 
@@ -11,9 +10,11 @@ interface ContactSectionProps {
 const translations = {
   en: {
     title: "Contact Us Today",
+    dataNote: "This form sends your details through Formfacade and Google Forms so our team can respond. Please do not include sensitive personal information.",
   },
   mr: {
     title: "आजच संपर्क साधा",
+    dataNote: "तुमची माहिती Formfacade आणि Google Forms द्वारे आमच्या टीमकडे जाते, जेणेकरून आम्ही उत्तर देऊ शकू. कृपया संवेदनशील वैयक्तिक माहिती लिहू नका.",
   },
 };
 
@@ -25,6 +26,7 @@ export default function ContactSection({ language, compact = false }: ContactSec
       </h2>}
 
       <div className={compact ? "contact-embed-content" : "my-6"}>
+        <p className="contact-data-note">{translations[language].dataNote}</p>
         <FormfacadeEmbed
           formFacadeURL="https://formfacade.com/include/114439240189022900817/form/1FAIpQLSdiCHB2E2kx2amJp_fCILp8rLRrwjjM3lCNic_htIGSBc6V_Q/classic.js/?div=ff-compose"
           onSubmitForm={() => console.log("Form submitted")}

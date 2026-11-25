@@ -1,4 +1,4 @@
-const features = {
+export const features = {
   en: [
     {
       title: "Collaboration & Knowledge Transfer",

@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage({ searchParams }: { searchParams: { interest?: string } }) {
-  const tractor = searchParams.interest === "tractor";
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ interest?: string }> }) {
+  const tractor = (await searchParams).interest === "tractor";
 
   return (
     <main className="contact-page">

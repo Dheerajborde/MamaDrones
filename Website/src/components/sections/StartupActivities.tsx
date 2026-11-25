@@ -1,4 +1,5 @@
 "use client"
+import type { JSX } from "react";
 
 import Image from "next/image"
 import { useEffect, useRef } from "react"
@@ -52,7 +53,7 @@ function StartupActivities({ language }: StartupActivitiesProps): JSX.Element {
     },
   }
 
-  const ActivityItem = ({ activity, index }: { activity: any; index: number }) => {
+  const ActivityItem = ({ activity, index }: { activity: { title: string; desc: string; image: string }; index: number }) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
     const controls = useAnimation()

@@ -1,10 +1,8 @@
+import type { JSX } from "react";
 import {
-    CalendarCheck,
     Clock,
-    Cloud,
     CloudCog,
     Languages,
-    ShieldCheck,
     Users,
   } from "lucide-react";
   import React from "react";

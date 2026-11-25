@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -26,12 +25,6 @@ const translations = {
 };
 
 function HeroSection({ language }: HeroSectionProps) {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <>
       {/* Hero Section with Video Background */}
@@ -42,7 +35,7 @@ function HeroSection({ language }: HeroSectionProps) {
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: isVisible ? 1 : 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.35 }}
           className="relative z-10 flex flex-col items-center justify-center text-center w-[90%] md:w-[70%] h-full px-4"
         >
@@ -77,9 +70,11 @@ function HeroSection({ language }: HeroSectionProps) {
       {/* New PNG Image - Placed JUST BELOW the video section */}
       <div className="bg-white py-8 md:py-12 flex justify-center">
         <div className="max-w-5xl w-full px-4">
-          <img
-            src="/Mama_app_soon.png"        // ← Make sure this name is correct
+          <Image
+            src="/Mama_app_soon.png"
             alt="Mama Drones Spraying in Action"
+            width={1200}
+            height={800}
             className="w-full rounded-2xl shadow-xl border border-gray-200"
           />
         </div>

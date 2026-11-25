@@ -1,8 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 interface ClientsPageProps {
@@ -21,17 +19,11 @@ const translations = {
 };
 
 const ClientsPage = ({ language }: ClientsPageProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <section className="w-full flex flex-col items-center justify-center py-10 sm:py-16 bg-gray-100 px-4 sm:px-8 lg:px-16">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.35 }}
         className="text-center w-full max-w-4xl"
       >

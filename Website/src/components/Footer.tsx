@@ -1,4 +1,5 @@
 "use client";
+import type { JSX } from "react";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -28,13 +29,14 @@ function Footer({ language }: FooterProps): JSX.Element {
       { threshold: 0.1 }
     );
 
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
+    const footerElement = footerRef.current;
+    if (footerElement) {
+      observer.observe(footerElement);
     }
 
     return () => {
-      if (footerRef.current) {
-        observer.unobserve(footerRef.current);
+      if (footerElement) {
+        observer.unobserve(footerElement);
       }
     };
   }, [controls]);

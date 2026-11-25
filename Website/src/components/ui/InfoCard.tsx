@@ -1,14 +1,10 @@
-import Image from "next/image";
-import { useTransform, useScroll, motion } from "framer-motion";
-import { useRef } from "react";
+import { useTransform, motion, type MotionValue } from "framer-motion";
 import useMediaQuery from "@/utils/useMediaQuery";
 
 const InfoCard = ({
   i,
   title,
   description,
-  src,
-  link,
   color,
   progress,
   range,
@@ -20,18 +16,10 @@ const InfoCard = ({
   src: string;
   link: string;
   color: string;
-  progress: any;
-  range: any;
-  targetScale: any;
+  progress: MotionValue<number>;
+  range: number[];
+  targetScale: number;
 }) => {
-  const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   const md = useMediaQuery("(min-width: 800px");

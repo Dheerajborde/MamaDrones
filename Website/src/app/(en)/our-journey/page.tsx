@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import EditorialImage from "@/components/EditorialImage";
 import { assets } from "@/lib/site-data";
-import "./journey.css";
+import "../../journey.css";
 
 export const metadata: Metadata = {
   title: "Our Journey",
